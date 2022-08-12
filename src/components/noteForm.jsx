@@ -28,6 +28,7 @@ const NoteForm = () => {
 
         setToggleForm(false)
         setSelectedPallete(null)
+        // localStorage.setItem("notes", JSON.stringify([...notes, note]))
     }
     const closeForm = () => {
         setToggleForm(false)
