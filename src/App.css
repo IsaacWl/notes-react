@@ -1,0 +1,139 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+}
+.notes-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  gap: 10px;
+  justify-content: center;
+}
+
+.note {
+  padding: 10px;
+  width: 100%;
+  box-shadow: 1px 1px 1px -1px;
+  text-align: left;
+  background: #f5f5dc;
+  margin-bottom: 10px;
+  animation: note 200ms forwards linear;
+  z-index: -1;
+}
+
+@keyframes note {
+  from { transform: scale(.80);}
+  to { transform: scale(1);}
+}
+
+.note-title {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 0 2%;
+}
+
+.note-content {
+  padding: 0 6%;
+}
+
+.edit-icon {
+  visibility: hidden;
+}
+
+.note:hover .edit-icon {
+  visibility: visible;
+}
+
+.add-note {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background: #1a75ff;
+  color: #fffff5;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.form-container {
+  background: rgba(0, 0, 0, .1);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.note-form {
+  display: flex;
+  flex-flow: column;
+  border: 1px solid #f1f1f1;
+  gap: 20px;
+  padding: 5%;
+  background: #fffff5;
+  width: 90%;
+}
+
+.close-form {
+  text-align: right;
+  color: #ff0000;
+  cursor: pointer;
+}
+.pallete-container {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.pallete {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.note-form .form-div {
+  display: flex;
+  flex-flow: column;
+}
+
+.note-form .form-div label {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.field {
+  border: 1px solid #f1f1f1;
+  padding: 10px;
+  outline: none;
+}
+
+.field.textarea {
+  resize: none;
+  font-family: sans-serif;
+  height: 10em;
+}
+
+@media screen and (min-width: 800px) {
+  .note {
+    width: 20em;
+  }
+  .note-form {
+    width: 50%;
+  }
+}
