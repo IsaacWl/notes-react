@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 
 const NoteContext = createContext()
-// const notesList = JSON.parse(localStorage.getItem("notes")) || []
+const notesList = JSON.parse(localStorage.getItem("notes")) || []
 
 const NoteProvider = ({ children }) => {
     const [ notes, setNotes ] = useState(notesList)

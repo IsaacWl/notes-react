@@ -1,10 +1,21 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  margin: 0;
 }
-
+.navbar {
+  display: flex;
+  background: #1a75ff;
+  width: 100%;
+  padding: 0 2%;
+  margin-bottom: 2.6em;
+}
+.navbar div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #f1f1f1;
+  font-family: cursive;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -15,8 +26,9 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 1000px;
-  gap: 10px;
+  gap: 2.6em;
   justify-content: center;
+  padding: 1em;
 }
 
 .note {
@@ -26,13 +38,12 @@
   text-align: left;
   background: #f5f5dc;
   margin-bottom: 10px;
-  animation: note 200ms forwards linear;
-  z-index: -1;
+  animation: note 280ms forwards linear;
 }
 
 @keyframes note {
-  from { transform: scale(.80);}
-  to { transform: scale(1);}
+  from { opacity: .1;}
+  to { opacity: 1;}
 }
 
 .note-title {
@@ -42,16 +53,23 @@
   padding: 0 2%;
 }
 
+
+.close-icon {
+  color: #ff0000;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  visibility: hidden;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+.note:hover .close-icon {
+  visibility: visible;
+}
+
 .note-content {
   padding: 0 6%;
-}
-
-.edit-icon {
-  visibility: hidden;
-}
-
-.note:hover .edit-icon {
-  visibility: visible;
 }
 
 .add-note {
@@ -77,6 +95,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 .note-form {

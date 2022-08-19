@@ -14,11 +14,14 @@ const NoteForm = () => {
         if (!title.trim() || !content.trim())
             return;
 
+        const rotateNote = () => Math.floor(Math.random() * (6 - -6) + -6)    
+        
         const note = {
             id: Date.now(),
             title: title,
             content: content,
-            theme: selectedPallete || ""
+            theme: selectedPallete || "",
+            rotate: rotateNote()
         }
 
         setNotes([...notes, note])
@@ -28,7 +31,8 @@ const NoteForm = () => {
 
         setToggleForm(false)
         setSelectedPallete(null)
-        // localStorage.setItem("notes", JSON.stringify([...notes, note]))
+        
+        localStorage.setItem("notes", JSON.stringify([...notes, note]))
     }
     const closeForm = () => {
         setToggleForm(false)
